@@ -6,7 +6,8 @@
  *
  * @package YOURLS Link Creator
  */
-/*  Copyright 2015 Reaktiv Studios
+/*
+  Copyright 2015 Reaktiv Studios
 
 	This program is free software; you can redistribute it and/or modify
 	it under the terms of the GNU General Public License as published by
@@ -45,7 +46,6 @@ if ( ! function_exists( 'wp_ozh_yourls_raw_url' ) ) {
 			return $short;
 		}
 	}
-
 }
 
 /**
@@ -59,11 +59,11 @@ if ( ! function_exists( 'wp_ozh_yourls_url' ) ) {
 
 		$short = esc_url( apply_filters( 'ozh_yourls_shorturl', wp_ozh_yourls_geturl( $id ) ) );
 
-		if ($short) {
+		if ( $short ) {
 
-			$rel    = esc_attr( apply_filters( 'ozh_yourls_shorturl_rel', 'nofollow alternate shorturl shortlink' ) );
+			$rel = esc_attr( apply_filters( 'ozh_yourls_shorturl_rel', 'nofollow alternate shorturl shortlink' ) );
 
-			$title  = esc_attr( apply_filters( 'ozh_yourls_shorturl_title', 'Short URL' ) );
+			$title = esc_attr( apply_filters( 'ozh_yourls_shorturl_title', 'Short URL' ) );
 
 			$anchor = esc_html( apply_filters( 'ozh_yourls_shorturl_anchor', $short ) );
 
@@ -72,7 +72,6 @@ if ( ! function_exists( 'wp_ozh_yourls_url' ) ) {
 		}
 
 	}
-
 }
 
 /**
@@ -84,7 +83,7 @@ if ( ! function_exists( 'wp_ozh_yourls_geturl' ) ) {
 	function wp_ozh_yourls_geturl( $id ) {
 
 		// Hardcode this const to always poll the shortening service. Debug tests only, obviously.
-		if( defined('YOURLS_ALWAYS_FRESH') && YOURLS_ALWAYS_FRESH ) {
+		if ( defined( 'YOURLS_ALWAYS_FRESH' ) && YOURLS_ALWAYS_FRESH ) {
 			$short = null;
 		} else {
 			$short = get_post_meta( $id, 'yourls_shorturl', true );
@@ -103,5 +102,4 @@ if ( ! function_exists( 'wp_ozh_yourls_geturl' ) ) {
 
 		return $short;
 	}
-
 }

@@ -6,7 +6,8 @@
  *
  * @package YOURLS Link Creator
  */
-/*  Copyright 2015 Reaktiv Studios
+/*
+  Copyright 2015 Reaktiv Studios
 
 	This program is free software; you can redistribute it and/or modify
 	it under the terms of the GNU General Public License as published by
@@ -41,7 +42,7 @@ if ( ! function_exists( 'yourls_display_box' ) ) {
 			}
 
 			// set my post ID
-			$post_id	= absint( $post->ID );
+			$post_id = absint( $post->ID );
 		}
 
 		// check for the link
@@ -78,7 +79,7 @@ if ( ! function_exists( 'get_yourls_shortlink' ) ) {
 			}
 
 			// set my post ID
-			$post_id	= absint( $post->ID );
+			$post_id = absint( $post->ID );
 		}
 
 		// check for the link
@@ -94,6 +95,5 @@ if ( ! function_exists( 'get_yourls_shortlink' ) ) {
 		// return the link
 		return esc_url( $link );
 	}
-
 }
 
